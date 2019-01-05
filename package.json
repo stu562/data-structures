@@ -1,0 +1,23 @@
+{
+  "name": "hrla27-data-structures",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stu562/hrla27-data-structures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stu562/hrla27-data-structures/issues"
+  },
+  "homepage": "https://github.com/stu562/hrla27-data-structures#readme"
+}

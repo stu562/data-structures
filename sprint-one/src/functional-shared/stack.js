@@ -26,7 +26,7 @@ var extend = function(obj, methods) {
 
 var stackMethods = {};
 stackMethods.push = function(value) {
-  this.storage[this.counter] = value;
+  this.storage[this.counter] = value;//this points to the stacks object in the constructor
   this.counter += 1;
 };
 
