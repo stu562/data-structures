@@ -11,15 +11,15 @@ var Stack = function(value) {
   stacks.counter = 0;
   stacks.storage = {};
   //use extend  for reference
-  extend(stacks, stackMethods);//to prevent duplication  
+  _.extend(stacks, stackMethods);//to prevent duplication  
   return stacks;
 };
   
-var extend = function(obj, methods) {
-  for (var key in methods) {
-    obj[key] = methods[key];
-  }
-};
+// var extend = function(obj, methods) {
+//   for (var key in methods) {
+//     obj[key] = methods[key];
+//   }
+// };
 // var counter = 0;
 // var storage = {};  
 
