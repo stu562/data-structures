@@ -5,16 +5,16 @@ var Queue = function() {
   var queueObj = {};
   queueObj.enqueueCount = 0;
   queueObj.dequeueCount = 0;
-  extend(queueObj, queueMethods);
+  _.extend(queueObj, queueMethods);
 
   return queueObj;
 };
 
-var extend = function(obj, methods) {
-  for (var key in methods) {
-    obj[key] = methods[key];
-  }
-};
+// var extend = function(obj, methods) {
+//   for (var key in methods) {
+//     obj[key] = methods[key];
+//   }
+// };
 
 
 var queueMethods = {};
