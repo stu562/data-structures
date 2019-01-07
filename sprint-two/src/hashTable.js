@@ -3,7 +3,11 @@
 var HashTable = function() {
   this._limit = 8;
   this._storage = LimitedArray(this._limit);
+  hash;
 };
+
+
+var hash = Object.create(HashTable.prototype);
 
 HashTable.prototype.insert = function(k, v) {
   var index = getIndexBelowMaxForKey(k, this._limit);
