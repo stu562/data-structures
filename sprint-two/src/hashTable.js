@@ -25,6 +25,9 @@ HashTable.prototype.remove = function(k) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+
+ insert, retrieve, remove is o(1) or constant. A very favorabble data structure.
+ Maintains no memory of the hashing or string input. 
  */
 
 
