@@ -1,14 +1,11 @@
 var Tree = function(value) {
   var newTree = {};
   newTree.value = value;
-
-  // your code here
-  newTree.children = null;// fix me
+  newTree.children = [];// fix me
   //property that contains any number of children 
   _.extend(newTree, treeMethods);
   return newTree;
 };
-
 
 //functional shared style 
 var treeMethods = {};
@@ -16,12 +13,13 @@ treeMethods.addChild = function(value) {
 // input: any value
 // sets that as the target of a node
 // adds that node as a child of the tree
-  if (!this.children) {
-    this.children[0] = [];//array storage 
-  }
+// method, takes any value, sets that as the target of a node, and adds that node as a child of the tree
+  // var newNode = {	value,
+		// 	   		children: [],
+		// 			};
+  this.children.push([value])
 
-  this.children.push(value); 
-  // this.children = value;
+  	
 };
 
 treeMethods.contains = function(target) {
@@ -30,6 +28,8 @@ treeMethods.contains = function(target) {
 
 	
 };
+
+
 
 
 /*
