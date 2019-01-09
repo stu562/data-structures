@@ -1,26 +1,40 @@
 
 // Instantiate a new graph
 var Graph = function() {
-	this.addObj = {};
+	this.vertices = [];
+	this.edges = []; // storage 
+	this.edgeCount = 0;
 
-
+	// graphMethods;
 };
-var graphMethods = Object.create(Graph.prototype);
 
+// let graphMethods = Object.create(Graph.prototype)
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
 	//method that takes a new node and adds it to the graph
-	this.addObj[node] = node;
+	this.vertices.push(node);
+	this.edges[node] = [];
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node) {
-	return this.addObj[node] === node;
+
+	//needs recursive call to look through entire graph 
+	for (var i = 0; i < this.vertices.length; i++) {
+    	(if this.vertices[i] === node) {
+    		return true;
+    	}
+	}
+
+	console.log('yeah got out of the loop')
+	return false; 
+
+
 };
 
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
-	delete this.addObj[node];
+	if ()
 };
 
 // Returns a boolean indicating whether two specified nodes are connected.  
@@ -34,22 +48,41 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
 Graph.prototype.addEdge = function(fromNode, toNode) {
 	// method that creates a edge (connection) between two nodes 
 	//if they both are present within the graph
-	if (Graph.prototype.hasEdge) {
-      this.addObj[fromNode].push(toNode);
-	};
+
+	this.edges[fromNode].push(toNode);
+	this.edges[toNode].push(fromNode);
+	this.edgeCount++; //keep count 
 };
 
 // Remove an edge between any two specified (by value) nodes.
 Graph.prototype.removeEdge = function(fromNode, toNode) {
 	//delete both nodes 
+
+	this.edgeCount--;//decrement 
 };
 
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
+	// for (var i = 0; i < this.vertices.length; i++) {
+	// 	this.vertices[cb];
+	// }
+	//each taken from underbar 
+	if (obj == null) return;
+    if (nativeForEach && obj.forEach === nativeForEach) {
+      obj.forEach(iterator, context);
+    } else if (obj.length === +obj.length) {
+      for (var i = 0, l = obj.length; i < l; i++) {
+        if (iterator.call(context, obj[i], i, obj) === breaker) return;
+      }
+    } else {
+      for (var key in obj) {
+        if (_.has(obj, key)) {
+          if (iterator.call(context, obj[key], key, obj) === breaker) return;
+        }
+      }
+    }
 };
 
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-
-

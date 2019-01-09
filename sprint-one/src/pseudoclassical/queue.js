@@ -6,10 +6,10 @@ var Queue = function() {
   this.enqueueCount = 0;
   this.dequeueCount = 0;
   // _.extend(this, queueMethods);
-  queueMethods;
+  // queueMethods;
 };
 
-let queueMethods = Object.create(Queue.prototype);
+// let queueMethods = Object.create(Queue.prototype);
 
 
 // var queueMethods = {};
@@ -32,3 +32,25 @@ Queue.prototype.size = function () {
   }
   return this.enqueueCount; // size of the enqueue that are in queue 
 };
+
+// var Queue = function () {
+//   this._storage = {}
+//   this._start = 0;
+//   this._end = 0;
+// }
+
+// Queue.prototype.enqueue = function (value) {
+//   this._storage[this._end++] = value;
+// };
+
+// Queue.prototype.dequeue = function () {
+//   var result = this._storage[this._start];
+//   if (this.size()) {
+//     delete this._storage[this._start];
+//     this._start++;
+//   }
+//   result;
+// };
+// Queue.prototype.size = function () {
+//   return this._end-this._start;
+// };

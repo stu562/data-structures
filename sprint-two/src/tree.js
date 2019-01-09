@@ -3,7 +3,7 @@ var Tree = function(value) {
   newTree.value = value;
   newTree.children = null;// fix me
   //property that contains any number of children 
-  _.extend(newTree, treeMethods);
+  _.extend(newTree, treeMethods); 
   return newTree;
 };
 
@@ -34,36 +34,40 @@ treeMethods.contains = function(target) {
 //   go further into the tree 
 // }
 
-//base case - check a tree with one node first 
+  //base case - check a tree with one node first 
 
-//recursive case 
-//[{…}, {…}, null] where each object is another child 
+  //recursive case 
+  //[{…}, {…}, null] where each object is another child 
 
   if (this.value === target) {
     return true;
-  } else if (this.children === null) {
+  } 
+
+  if (this.children === null) {
     return false;
   }
   //if the root has no children 
 
-  for (var i = 0; i < this.children; i++) {
-    if (this.children[i].value === target) {
-      //look for the value and match the target 
-      return true; // recursion
+  for (var i = 0; i < this.children.length; i++) {
+    // if (this.children[i].value === target) {
+    //   //look for the value and match the target 
+    //   return true; 
+      // recursion
       //if target does not match
-    } else if (Array.isArray(this.children[i].children)) {
-      treeMethods.contains();
+   // if (Array.isArray(this.children[i].children)) {
+    // return this.children[i].contains(target) === true;
+      if (this.children[i].contains(target)) {
+        return true;
+      }
     }
-  }
-};
+    return false; 
+}
+// };
 
 /* complexity 
 
 */
-
-
-
-
-/*
- * Complexity: What is the time complexity of the above functions?
- */
+ // * Complexity: What is the time complexity of the above functions?
+ //  addChild - o(n) - linear - meaning speed depends linearlly on data size 
+ //  contains - o(n)
+ // */
